@@ -9,7 +9,7 @@ This repository contains code and results for a multiclass classification projec
 │   ├── test.csv
 │   └── train.csv
 └── raw/
-└── News_Category_Dataset_v3.json
+    └── News_Category_Dataset_v3.json
 logs/
 ├── basic_algos.txt
 ├── boostings_alogs.txt
@@ -31,7 +31,7 @@ README.md
 - `logs/`: Stores text files containing the output and results of different model runs.
     - `results.md`: Contains the key learnings and overview of the differnet models' outputs. 
 - `notebooks/`: Contains the Jupyter notebooks detailing each step of the project.
-    - `01_data_ingestion.ipynb`: Notebook for loading, cleaning, and splitting the data.
+    - `01_data_ingestion.ipynb`: Notebook for loading, cleaning, and splitting the data. If the json file is not downloaded, running this notebook will download the dataset and split the dataset into test train csv files.
     - `02_classical_baselines.ipynb`: Notebook for training and evaluating classical machine learning models.
     - `03_boosting.ipynb`: Notebook for training and evaluating boosting algorithms.
     - `04_cnn_text.ipynb`: Notebook for building and training a 1D Convolutional Neural Network for text classification.
