@@ -2,6 +2,8 @@
 
 This repository contains code and results for a multiclass classification project on a news category dataset. The goal is to classify news headlines and short descriptions into predefined categories.
 
+Dataset: https://www.kaggle.com/datasets/rmisra/news-category-dataset
+
 ## Repository Structure
 
 ```data/
