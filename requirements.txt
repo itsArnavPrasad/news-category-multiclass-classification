@@ -1,0 +1,17 @@
+pandas
+simplejson
+regex
+scikit-learn
+pathlib
+xgboost 
+lightgbm 
+catboost
+matplotlib
+seaborn
+warnings
+numpy
+tensorflow-macos # for M1/M2 Macs
+tensorflow-metal # for M1/M2 Macs
+# tensorflow # for other systems
+# tensorflow-cpu # for other systems
+# tensorflow-gpu # for other systems

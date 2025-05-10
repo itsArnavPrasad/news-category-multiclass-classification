@@ -1,0 +1,66 @@
+CNN:
+
+
+# Build the 1D CNN Model
+model = Sequential()
+model.add(Embedding(input_dim=10000, output_dim=128))  # Using 10000 words, embedding size of 128
+model.add(Conv1D(filters=128, kernel_size=5, activation='relu'))  # 128 filters, kernel size of 5
+model.add(GlobalMaxPooling1D())  # Reduces dimensionality by keeping max feature
+model.add(Dense(128, activation='relu'))  # Dense layer with 128 units
+model.add(Dropout(0.5))  # Dropout for regularization
+model.add(Dense(y_train.shape[1], activation='softmax'))  # Output layer with the number of classes
+model.compile(optimizer=Adam(learning_rate=0.001), loss='categorical_crossentropy', metrics=['accuracy'])
+history = model.fit(X_train, y_train, epochs=10, batch_size=64, validation_data=(X_test, y_test))
+
+Accuracy: 0.5909318697052858
+F1 Score: 0.5755792376151584
+Classification Report:
+
+                precision    recall  f1-score   support
+
+          ARTS       0.28      0.10      0.15       302
+ARTS & CULTURE       0.22      0.19      0.20       268
+  BLACK VOICES       0.54      0.32      0.41       917
+      BUSINESS       0.55      0.33      0.41      1198
+       COLLEGE       0.52      0.30      0.38       229
+        COMEDY       0.49      0.46      0.48      1080
+         CRIME       0.39      0.63      0.48       712
+CULTURE & ARTS       0.34      0.37      0.36       215
+       DIVORCE       0.82      0.67      0.73       685
+     EDUCATION       0.34      0.36      0.35       203
+ ENTERTAINMENT       0.60      0.72      0.66      3473
+   ENVIRONMENT       0.47      0.27      0.34       289
+         FIFTY       0.28      0.14      0.19       280
+  FOOD & DRINK       0.58      0.77      0.66      1268
+     GOOD NEWS       0.21      0.19      0.20       280
+         GREEN       0.35      0.30      0.32       524
+HEALTHY LIVING       0.37      0.35      0.36      1339
+ HOME & LIVING       0.72      0.68      0.70       864
+        IMPACT       0.24      0.34      0.28       697
+ LATINO VOICES       0.57      0.29      0.38       226
+         MEDIA       0.57      0.37      0.45       589
+         MONEY       0.55      0.40      0.47       351
+     PARENTING       0.53      0.71      0.61      1758
+       PARENTS       0.49      0.23      0.31       791
+      POLITICS       0.71      0.83      0.77      7121
+  QUEER VOICES       0.71      0.68      0.69      1269
+      RELIGION       0.59      0.43      0.50       515
+       SCIENCE       0.50      0.38      0.43       441
+        SPORTS       0.63      0.63      0.63      1015
+         STYLE       0.49      0.40      0.44       451
+STYLE & BEAUTY       0.78      0.81      0.79      1963
+         TASTE       0.37      0.14      0.20       419
+          TECH       0.55      0.44      0.49       421
+ THE WORLDPOST       0.40      0.53      0.45       733
+        TRAVEL       0.71      0.74      0.73      1980
+     U.S. NEWS       0.28      0.04      0.06       275
+      WEDDINGS       0.78      0.80      0.79       731
+    WEIRD NEWS       0.29      0.34      0.31       555
+      WELLNESS       0.64      0.70      0.67      3589
+         WOMEN       0.53      0.22      0.31       714
+    WORLD NEWS       0.38      0.21      0.27       660
+     WORLDPOST       0.42      0.24      0.31       515
+
+      accuracy                           0.59     41905
+     macro avg       0.49      0.43      0.45     41905
+  weighted avg       0.58      0.59      0.58     41905
